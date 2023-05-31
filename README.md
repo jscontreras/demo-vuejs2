@@ -1,6 +1,6 @@
-# Demo-vuejs2
+# vuejs2
 
-> Vuejs Version 2.6.12
+> VueJs version 2.6.12
 
 ## Build Setup
 
@@ -19,4 +19,3 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# demo-vuejs2
