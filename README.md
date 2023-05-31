@@ -1,6 +1,6 @@
-# dr-squash-vuejs2
+# Demo-vuejs2
 
-> DrSquash 2.6.12
+> Vuejs Version 2.6.12
 
 ## Build Setup
 
