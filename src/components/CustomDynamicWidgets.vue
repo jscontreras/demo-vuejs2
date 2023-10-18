@@ -3,7 +3,7 @@
     <ais-panel v-for="attribute in state.attributesToRender" :key="attribute">
       <template #header>{{ attribute }}</template>
       <!-- You can use any other widget you want here -->
-      <ais-refinement-list :attribute="attribute"></ais-refinement-list>
+      <ais-refinement-list :attribute="attribute" searchable="true"></ais-refinement-list>
     </ais-panel>
   </div>
 </template>

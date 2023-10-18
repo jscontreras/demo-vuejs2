@@ -14,9 +14,8 @@
       <ais-instant-search :search-client="searchClient" index-name="instant_search">
         <div class="search-panel">
           <div class="search-panel__filters">
-            <ais-refinement-list attribute="brand" />
             <ais-dynamic-widgets :facets="['*']">
-              <ais-refinement-list attribute="brand" />
+              <ais-refinement-list attribute="brand" searchable="true"/>
               <ais-hierarchical-menu
                 :attributes="['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']" />
             </ais-dynamic-widgets>
@@ -44,14 +43,21 @@ import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 import CustomDynamicWidgets from './components/CustomDynamicWidgets';
 
+const searchBase = algoliasearch(
+        'SGF0RZXAXL',
+        '0ac0c3b165eb3773097eca1ac25d8fdd'
+      );
+
+// proxy function
+const searchProxy = {...searchBase, search(request) {
+  return searchBase.search(request);
+}};
+
 export default {
   components: { CustomDynamicWidgets },
   data() {
     return {
-      searchClient: algoliasearch(
-        'SGF0RZXAXL',
-        '0ac0c3b165eb3773097eca1ac25d8fdd'
-      ),
+      searchClient: searchProxy,
     };
   },
 };
